@@ -16,8 +16,8 @@ async def remove(ctx, *, item: str):
     else:
         await ctx.send("That is not on the list")
     
-@bot.command(name="remove#", help="remove an item from the list by the number")
-async def remove(ctx, num: int):
+@bot.command(name="removenumber", help="remove an item from the list by the number")
+async def removenumber(ctx, num: int):
     if (len(toDo) < num):
         newNumber = str(num)
         await ctx.send("There is not an item " + newNumber + " on the list")
@@ -39,4 +39,3 @@ with open("BOT_TOKEN.txt", "r") as token_file:
     TOKEN = token_file.read()
     print("Token file read")
     bot.run(TOKEN)
-
